@@ -24,6 +24,10 @@ header, main, footer {
 header {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    box-shadow: 0px 4px 4px rgba(3, 56, 47, 0.11);
+    z-index: 100;
+    font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+    font-weight: 500;
 
     & img {
         margin: 1rem;
@@ -71,17 +75,27 @@ header {
         grid-column-end: 3;
         text-align: center;
         text-transform: uppercase;
+        background-color: white;
 
         & ul {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin: 0;
+            padding: 0;
 
             & li {
                 list-style-type: none;
 
                 & a {
+                    display: block;
+                    padding: 1rem;
                     text-decoration: none;
-                    color: var(--color-green)
+                    color: var(--color-green);
+
+                    &:hover {
+                        background-color: var(--color-green);
+                        color: white;
+                    }
                 }
             }
         }
@@ -95,15 +109,58 @@ main {
         margin: 2rem;
     }
 
+    & h1 {
+        color: var(--color-green);
+        text-transform: uppercase;
+        font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 48px;
+        text-align: center;
+    }
+
+    & h2 {
+        font-size: 32px;
+    }
+
     & button {
         border: none;
         border-radius: 9px;
         color: white;
         background-color: var(--color-green);
         padding: 1rem 3rem;
-        text-transform: uppercase;
         font-size: 24px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
+
+    & article.season, article.history {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    & article.season button {
+        float: right;
+        text-transform: uppercase;
+    }
+
+    & article.history {
+        direction: rtl;
+
+        & * {
+            direction: ltr;
+        }
+    }
+}
+
+aside.illustration {
+    background-color: var(--color-green);
+    border: none;
+    border-radius: 100%;
+    aspect-ratio: 1;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 405px;
 }
 
 footer {
@@ -112,6 +169,7 @@ footer {
     background-image: url('./assets/footer-bg.jpeg');
     background-size: cover;
     background-position: center;
+    margin-bottom: 10rem;
 
     & section.contact {
         height: 590px;
@@ -120,6 +178,42 @@ footer {
         grid-row-start: 1;
         color: white;
         background-color: var(--color-transparent-black);
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+
+        & h1 {
+            font-size: 64px;
+            font-weight: 500;
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            align-self: center;
+        }
+
+        & p {
+            font-size: 20px;
+            background-repeat: no-repeat;
+            align-self: center;
+            margin-top: auto;
+            margin-bottom: 2rem;
+
+            &.phone {
+                text-align: left;
+                background-image: url('./assets/phone.svg');
+                background-position: left 2rem center;
+                padding-left: 5rem;
+            }
+
+            &.email {
+                text-align: right;
+                background-image: url('./assets/envelope.svg');
+                background-position: right 2rem center;
+                padding-right: 5rem;
+            }
+        }
     }
 
     & section.logo {
@@ -135,7 +229,6 @@ footer {
         grid-column-end: 3;
         text-align: center;
         background-color: white;
-        aspect-ratio: 1;
 
         & a {
             display: block;
@@ -143,8 +236,32 @@ footer {
             text-decoration: none;
             font-size: 24px;
             width: 100%;
-            padding: 1rem;
+            padding: 1.5rem 0;
+
+            &:hover {
+                background-color: rgb(233, 233, 233);
+            }
         }
+    }
+}
+
+.plantings {
+    text-align: center;
+
+    &:before {
+        content: "";
+        display: block;
+        background-color: var(--color-green);
+        height: 3px;
+        width: 333px;
+        transform: rotateZ(-0.38deg);
+        margin: 5rem auto;
+    }
+
+    & h2 {
+        font-weight: 500;
+        text-align: center;
+        margin: 0;
     }
 }
 
@@ -156,8 +273,10 @@ footer {
     font-size: 0.7rem;
     gap: 2.5rem 1.5rem;
     margin-bottom: 1rem;
+    text-align: left;
 
     & article {
+        position: relative;
         color: black;
         background-color: white;
         box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
