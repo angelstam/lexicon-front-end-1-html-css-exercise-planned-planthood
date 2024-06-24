@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mina sidor - Planned Planthood</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="small-screens.css" media="screen and (max-width: 999px)">
 </head>
 <body>
   <header>
@@ -18,24 +19,29 @@
     </nav>
     <section class="logo">
       <img src="./assets/Logo.svg" alt="Planned Planthood logo">
+      <h1>Mina sidor</h1>
     </section>
   </header>
   <main>
-    <article>
+    <article class="add-planting">
       <h2>Lägg till ny plantering:</h2>
       <fieldset>
-        <label for="plant">Planta:</label>
-        <input name="plant" type="text">
-        <label for="date">Datum:</label>
-        <input name="date" type="date">
+        <div>
+          <label for="plant">Planta:</label>
+          <input name="plant" type="text">
+        </div>
+        <div>
+          <label for="date">Datum:</label>
+          <input name="date" type="date">
+        </div>
       </fieldset>
       <button>Lägg till</button>
     </article>
-    <article>
+    <article class="plantings">
       <h2>Dina planerade planteringar:</h2>
       <section class="plantings-grid">
         <article>
-          <img src="./assets/plant-01.jpeg" alt="Bild på gurka">
+          <figure><img src="./assets/plant-01.jpeg" alt="Bild på gurka"></figure>
           <h3>Gurka</h3>
           <date>15 april 2024</date>
           <p>Rico Coolio</p>
@@ -43,18 +49,18 @@
         </article>
       </section>
     </article>
-    <article>
+    <article class="plantings">
       <h2>Dina planterade planteringar:</h2>
       <section class="plantings-grid">
         <article>
-          <img src="./assets/plant-01.jpeg" alt="Bild på gurka">
+          <figure><img src="./assets/plant-01.jpeg" alt="Bild på gurka"></figure>
           <h3>Gurka</h3>
           <date>15 april 2024</date>
           <p>Rico Coolio</p>
           <button>Ta bort</button>
         </article>
         <article>
-          <img src="./assets/plant-01.jpeg" alt="Bild på gurka">
+          <figure><img src="./assets/plant-01.jpeg" alt="Bild på gurka"></figure>
           <h3>Gurka</h3>
           <date>15 april 2024</date>
           <p>Rico Coolio</p>
@@ -64,7 +70,7 @@
     </article>
   </main>
   <footer>
-    <section>
+    <section class="random">
       <img src="./assets/random-01.jpeg" alt="Odlingsbild">
       <img src="./assets/random-02.jpeg" alt="Odlingsbild">
       <img src="./assets/random-03.jpeg" alt="Odlingsbild">

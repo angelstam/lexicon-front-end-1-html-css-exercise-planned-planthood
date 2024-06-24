@@ -5,11 +5,15 @@
     --color-brown: #9E6D52;
     --color-red: #B93857;
     --color-transparent-black: rgba(0, 0, 0, 0.79);
+
+    --font-family-open-sans: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --font-family-maven-pro: 'Maven Pro', Arial, Helvetica, sans-serif;
+    --font-family-lato: 'Lato', Arial, Helvetica, sans-serif;
 }
 
 body {
     margin: 0;
-    font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: var(--font-family-open-sans);
     background-color: #FCF6FC;
     min-width: 50rem;
     display: grid;
@@ -19,14 +23,15 @@ body {
 
 header, main, footer {
     width: 1000px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     box-shadow: 0px 4px 4px rgba(3, 56, 47, 0.11);
     z-index: 100;
-    font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+    font-family: var(--font-family-maven-pro);
     font-weight: 500;
 
     & img {
@@ -34,39 +39,25 @@ header {
     }
 
     & section.logo {
-        grid-row-start: 1;
-        grid-row-end: 3;
-        background-image: url('./assets/header-bg.jpg');
+        background-image: url('./assets/potatoes-bg.jpeg');
         background-size: cover;
         background-position: center;
+        background-color: rgba(0, 0, 0, 0.20);
         display: grid;
         align-items: center;
         justify-content: center;
 
+        & h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 300;
+            text-align: center;
+            margin-top: 0;
+        }
+
         & img {
+            margin: 2rem;
             height: 196px;
-        }
-    }
-
-    & section.plant {
-        background-color: var(--color-brown);
-        display: grid;
-        align-items: center;
-        justify-content: center;
-
-        & img {
-            width: 176px;
-        }
-    }
-
-    & section.dig {
-        background-color: var(--color-green);
-        display: grid;
-        align-items: center;
-        justify-content: center;
-
-        & img {
-            width: 155px;
         }
     }
 
@@ -102,6 +93,38 @@ header {
     }
 }
 
+header.index {
+    grid-template-columns: 1fr 1fr;
+
+    & section.logo {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        background-image: url('./assets/header-bg.jpg');
+    }
+
+    & section.plant {
+        background-color: var(--color-brown);
+        display: grid;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+            width: 176px;
+        }
+    }
+
+    & section.dig {
+        background-color: var(--color-green);
+        display: grid;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+            width: 155px;
+        }
+    }
+}
+
 main {
     background-color: white;
 
@@ -112,7 +135,7 @@ main {
     & h1 {
         color: var(--color-green);
         text-transform: uppercase;
-        font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+        font-family: var(--font-family-maven-pro);
         font-weight: 500;
         font-size: 48px;
         text-align: center;
@@ -166,7 +189,7 @@ aside.illustration {
 footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-image: url('./assets/footer-bg.jpeg');
+    background-image: url('./assets/potatoes-bg.jpeg');
     background-size: cover;
     background-position: center;
     margin-bottom: 10rem;
@@ -182,7 +205,7 @@ footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto;
-        font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+        font-family: var(--font-family-maven-pro);
 
         & h1 {
             font-size: 64px;
@@ -243,11 +266,77 @@ footer {
             }
         }
     }
+
+    & .random {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: var(--color-brown);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        padding: 1.6rem;
+
+        & img {
+            object-fit: cover;
+            width: 100%;
+            aspect-ratio: 1;
+        }
+    }
+}
+
+.add-planting {
+    display: grid;
+    margin-bottom: 7rem;
+
+    & h2 {
+        font-family: var(--font-family-open-sans);
+        font-weight: 200;
+    }
+
+    & fieldset {
+        border: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+        gap: 3rem;
+
+        & label, input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        & label {
+            font-size: 20px;
+        }
+
+        & input {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            height: 3rem;
+            font-size: 20px;
+        }
+    }
+
+    & button {
+        margin-top: 2rem;
+        justify-self: center;
+        text-transform: uppercase;
+    }
 }
 
 .plantings {
     text-align: center;
 
+    & h2 {
+        font-weight: 500;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+.divider {
     &:before {
         content: "";
         display: block;
@@ -256,12 +345,6 @@ footer {
         width: 333px;
         transform: rotateZ(-0.38deg);
         margin: 5rem auto;
-    }
-
-    & h2 {
-        font-weight: 500;
-        text-align: center;
-        margin: 0;
     }
 }
 
@@ -285,12 +368,32 @@ footer {
         align-items: center;
         justify-content: center;
 
-        & img {
+        & figure {
             grid-column-start: 1;
             grid-column-end: 3;
-            object-fit: cover;
+            position: relative;
             width: 100%;
-            aspect-ratio: 1;
+            margin: 0;
+            padding: 0;
+
+            & img {
+                object-fit: cover;
+                width: 100%;
+                aspect-ratio: 1;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-image: url('./assets/plant.svg');
+                background-size: 70% 70%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
         }
 
         & h3, date, p, button {
@@ -309,17 +412,19 @@ footer {
         }
 
         & p {
-            font-family: 'Lato';
+            font-family: var(--font-family-lato);
             font-size: 16px;
             font-weight: lighter;
         }
 
         & button {
+            box-shadow: none;
             justify-self: right;
             width: fit-content;
             height: fit-content;
             background-color: var(--color-red);
             font-size: 15px;
+            text-transform: uppercase;
             padding: 0.5rem 1rem;
         }
     }
