@@ -1,4 +1,226 @@
 
 header, main, footer {
     width: 100%;
+    max-width: 600px;
+}
+
+
+header.index {
+    & section {
+        aspect-ratio: 1;
+    }
+
+    & section.logo {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+main {
+
+    &> * {
+        margin: 1rem;
+    }
+
+    & h1 {
+        font-family: var(--font-family-maven-pro);
+        font-size: 24px;
+        margin-top: 2rem;
+    }
+
+    & h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    & p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    & button {
+        padding: 0.6rem 1.5rem;
+        font-size: 16px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    & article.season, article.history {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & article.plantings button {
+        text-transform: uppercase;
+    }
+
+    & article.season button {
+        float: none;
+        text-transform: uppercase;
+    }
+
+    & article.history {
+        direction: ltr;
+    }
+}
+
+aside.illustration {
+    width: 80%;
+}
+
+footer {
+    grid-template-columns: 1fr;
+    margin-bottom: 0;
+
+    & section.contact {
+        width: 100%;
+        aspect-ratio: 1;
+        grid-column-start: auto;
+        grid-column-end: auto;
+        grid-row-start: auto;
+
+        & h1 {
+            font-size: 32px;
+        }
+
+        & p {
+            font-size: 12px;
+            margin-bottom: 1rem;
+
+            &.phone {
+                background-position: left 1rem center;
+                background-size: 1rem;
+                padding-left: 2.5rem;
+            }
+
+            &.email {
+                background-position: right 1rem center;
+                background-size: 1rem;
+                padding-right: 2.5rem;
+            }
+        }
+    }
+
+    & section.logo {
+        grid-column-start: auto;
+        grid-column-end: auto;
+        aspect-ratio: 1;
+    }
+
+    & nav {
+        grid-column-start: auto;
+        grid-column-end: auto;
+        text-align: center;
+
+        & a {
+            font-size: 12px;
+            padding: 1rem 0;
+        }
+    }
+
+    & .random {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        padding: 1rem;
+
+        & img {
+            aspect-ratio: 2;
+        }
+    }
+}
+
+.add-planting {
+    display: grid;
+    margin-bottom: 7rem;
+
+    & h2 {
+        font-size: 24px;
+    }
+
+    & fieldset {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        & label {
+            font-size: 12px;
+        }
+
+        & input {
+            height: 2rem;
+            font-size: 12px;
+        }
+    }
+
+    & button {
+        margin-top: 2rem;
+        justify-self: center;
+        text-transform: uppercase;
+    }
+}
+
+.plantings {
+    text-align: center;
+
+    & h2 {
+        font-size: 16px;
+    }
+}
+
+.divider {
+    &:before {
+        height: 3px;
+        width: 202px;
+        transform: rotateZ(-0.28deg);
+        margin: 3rem auto;
+    }
+}
+
+.plantings-grid {
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 0;
+    font-size: 0.7rem;
+    gap: 1rem;
+
+    & article {
+        & figure {
+            &:after {
+                background-image: url('./assets/plant-small.svg');
+                background-size: 60% 60%;
+            }
+        }
+
+        & h3, date, p, button {
+            margin: 0.5rem;
+        }
+
+        & h3 {
+            font-family: var(--font-family-lato);
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        & date {
+            justify-self: right;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        & p {
+            font-size: 10px;
+            font-weight: lighter;
+        }
+
+        & button {
+            background-image: url('./assets/trash-red.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 16px;
+            width: 16px;
+            height: 16px;
+            background-color: rgba(0, 0, 0, 0);
+            color: rgba(0, 0, 0, 0);
+            padding: 1rem 1rem;
+        }
+    }
 }
