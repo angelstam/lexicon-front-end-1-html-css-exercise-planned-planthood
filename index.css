@@ -306,11 +306,6 @@ footer {
         padding: 0;
         gap: 3rem;
 
-        & label, input {
-            display: flex;
-            flex-direction: column;
-        }
-
         & label {
             font-size: 20px;
         }
