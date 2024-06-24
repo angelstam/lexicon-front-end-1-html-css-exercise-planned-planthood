@@ -32,10 +32,6 @@ header {
     font-family: var(--font-family-maven-pro);
     font-weight: 500;
 
-    & img {
-        margin: 1rem;
-    }
-
     & section.logo {
         background-image: url('./assets/potatoes-bg.jpeg');
         background-size: cover;

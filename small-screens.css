@@ -1,5 +1,6 @@
 header, main, footer {
     width: 100vw;
+    overflow: hidden;
 }
 
 main, footer {
