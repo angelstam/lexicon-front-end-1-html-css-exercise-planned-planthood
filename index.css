@@ -46,6 +46,10 @@ header {
         align-items: center;
         justify-content: center;
 
+        & .toggle {
+            display: none;
+        }
+
         & h1 {
             color: white;
             font-size: 40px;
