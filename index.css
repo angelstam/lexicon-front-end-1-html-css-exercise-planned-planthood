@@ -17,7 +17,6 @@ body {
     background-color: #FCF6FC;
     display: grid;
     justify-content: center;
-    min-height: 100vh;
 }
 
 header, main, footer {
@@ -110,7 +109,7 @@ header.index {
         justify-content: center;
 
         & img {
-            width: 176px;
+            height: 86%;
         }
     }
 
@@ -121,7 +120,7 @@ header.index {
         justify-content: center;
 
         & img {
-            width: 155px;
+            height: 86%;
         }
     }
 
@@ -228,6 +227,7 @@ footer {
             align-self: center;
             margin-top: auto;
             margin-bottom: 2rem;
+            background-size: contain;
 
             &.phone {
                 text-align: left;

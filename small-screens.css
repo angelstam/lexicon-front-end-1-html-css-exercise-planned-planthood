@@ -1,9 +1,10 @@
-
 header, main, footer {
-    width: 100%;
-    max-width: 600px;
+    width: 100vw;
 }
 
+main, footer {
+    box-shadow: none;
+}
 
 header {
     position: relative;
@@ -59,6 +60,7 @@ header.index {
 }
 
 main {
+    padding-bottom: 5rem;
 
     &> * {
         margin: 1rem;
@@ -91,6 +93,17 @@ main {
         grid-template-columns: 1fr;
         align-items: center;
         justify-content: center;
+        text-align: center;
+
+        & aside.illustration {
+            grid-row-start: 2;
+            width: auto;
+            margin: 2rem 4rem;
+
+            & img {
+                width: auto;
+            }
+        }
     }
 
     & article.plantings button {
@@ -104,11 +117,11 @@ main {
 
     & article.history {
         direction: ltr;
-    }
-}
 
-aside.illustration {
-    width: 80%;
+        & aside.illustration {
+            grid-row-start: auto;
+        }
+    }
 }
 
 footer {
@@ -116,6 +129,7 @@ footer {
     margin-bottom: 0;
 
     & section.contact {
+        height: auto;
         width: 100%;
         aspect-ratio: 1;
         grid-column-start: auto;
@@ -214,7 +228,7 @@ footer {
         height: 3px;
         width: 202px;
         transform: rotateZ(-0.28deg);
-        margin: 3rem auto;
+        margin: 1rem auto 3rem auto;
     }
 }
 
@@ -251,6 +265,7 @@ footer {
         & p {
             font-size: 10px;
             font-weight: lighter;
+            text-align: left;
         }
 
         & button {
